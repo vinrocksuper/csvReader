@@ -64,6 +64,6 @@ public class SATtakers {
     }
     public String toString()
     {
-        return "School " + name + ", dbn=" + dbn +", total takers"+ total + ", reading avg=" + read + ", writing avg=" + write + ", math avg="+ math;
+        return "" + name + ", dbn =" + dbn +", total takers = "+ total + ", reading avg = " + read + ", writing avg = " + write + ", math avg = "+ math;
     }
 }
