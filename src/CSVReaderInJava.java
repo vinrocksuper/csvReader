@@ -1,3 +1,6 @@
+import javafx.application.Application;
+import javafx.stage.Stage;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -9,21 +12,14 @@ import java.util.List;
 
 public class CSVReaderInJava {
 
-    public static void main(String[] args) {
-        List<SATtakers> x =fromCSV();
-        for(SATtakers s : x)
-        {
-            System.out.println(s);
-        }
-    }
 
 
-    private static List<SATtakers> fromCSV(){
+    public static List<SATtakers> fromCSV(){
 
         List<SATtakers> z = new ArrayList<>();
         Path pathToFile = Paths.get("src/2012_SAT_Results.csv");
 
-        try(BufferedReader br = Files.newBufferedReader(pathToFile, StandardCharsets.US_ASCII)){
+        try(BufferedReader br = Files.newBufferedReader(pathToFile, StandardCharsets.UTF_8)){
             String line = br.readLine();
             line = br.readLine();
             while(line != null){
@@ -52,6 +48,7 @@ public class CSVReaderInJava {
         int write = Integer.parseInt(metadata[5]);
         return new SATtakers(dbn,name,total,read,math,write);
     }
+
 
 
 }
